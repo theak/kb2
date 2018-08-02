@@ -10,7 +10,8 @@
     <form>
       <div class="form-group">
         <label for="type">Typing sound simulator</label>
-        <input class="form-control" id="type" placeholder="Type here for sounds" onkeydown="handleKeyDown(event)">
+        <input class="form-control" id="type" placeholder="Type here for sounds"
+            onkeypress="handleKeyPress(event)" onkeydown="handleKeyDown(event)" >
       </div>
     </form>
   </div>

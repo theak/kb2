@@ -1,14 +1,22 @@
 const $ = (q) => document.querySelectorAll(q);
 
 const getSound = (id) => document.getElementById("sound" + id);
+function handleKeyPress(e) {
+  var key = e.key;
+  if (key === " ") {
+    console.log(1);
+    getSound(1).play();
+  } else if (key.length === 1) {
+    console.log(0);
+    getSound(0).play();
+  }
+}
+
 function handleKeyDown(e) {
   var key = e.key;
   if (key === "Backspace") {
+    console.log(2);
     getSound(2).play();
-  } else if (key === " ") {
-    getSound(1).play();
-  } else if (key.length === 1) {
-    getSound(0).play();
   }
 }
 
@@ -30,7 +38,6 @@ document.addEventListener("DOMContentLoaded", () => {
         tmpl.querySelector("input").checked = true;
       }
       tmpl.querySelector("input").onchange = () => {
-        console.log(getWav(sound));
         getSound(soundSetIndex).firstChild.src = getWav(sound);
         getSound(soundSetIndex).load();
       };
