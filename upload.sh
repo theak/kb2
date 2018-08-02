@@ -12,4 +12,4 @@ fi
 #find . -name ".DS_Store" | xargs rm
 #find . -name "*~" | xargs rm
 
-aws s3 cp . s3://kb-sound/ --recursive --exclude *~ --exclude ".git*" --dryrun
+aws s3 cp . s3://kb-sound/ --recursive --exclude *~ --exclude ".git*"
